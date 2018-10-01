@@ -10,4 +10,7 @@ if(upload==0):
 	os.system('git add .')
 	os.system('git commit -m "'+fileName+' add"')
 	os.system('git push origin master')
+	str='https://gaoqisen.github.io/GraphBed/'+fileName
+	print(str)
+	os.system('notepad python.txt')
 	print('end')
