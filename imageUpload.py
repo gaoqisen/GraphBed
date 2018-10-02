@@ -9,16 +9,16 @@ def txt(text):
 	os.system('open github_image_path.txt')
 	os.system('say "ok"')
 
-fileName=time.strftime("%Y%m%d%H%M%S", time.localtime())+'.png'
+dir=time.strftime("%Y%m", time.localtime())
+fileName=dir+time.strftime("%Y%m%d%H%M%S", time.localtime())+'.png'
+if not os.path.exists(dir):
+        os.makedirs(dir)
 print(fileName)
 upload=os.system('screencapture -i '+fileName)
 print(upload)
 if(upload==0):
-	print('success')
 	os.system('git add .')
 	os.system('git commit -m "'+fileName+' add"')
 	os.system('git push origin master')
 	str='https://gaoqisen.github.io/GraphBed/'+fileName
-	print(str)
 	txt(str)
-	print('end')
