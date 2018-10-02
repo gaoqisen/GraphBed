@@ -2,6 +2,7 @@
 import os
 import time
 def txt(text):
+	print(text)
 	file = open('github_image_path.txt','w')
 	file.write(text)
 	file.close()
