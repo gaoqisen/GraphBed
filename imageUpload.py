@@ -10,7 +10,7 @@ def txt(text):
 	os.system('say "ok"')
 
 dir=time.strftime("%Y%m", time.localtime())
-fileName=dir+time.strftime("%Y%m%d%H%M%S", time.localtime())+'.png'
+fileName=dir+'/'+time.strftime("%Y%m%d%H%M%S", time.localtime())+'.png'
 if not os.path.exists(dir):
         os.makedirs(dir)
 print(fileName)
