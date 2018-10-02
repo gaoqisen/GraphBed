@@ -3,7 +3,7 @@ import os
 import time
 
 def txt(text):
-        file = open('github_image_path.txt','w')
+        file = open('github_image_path.txt','w+')
         file.write(text)
         file.close()
         os.system('open github_image_path.txt')
@@ -20,11 +20,11 @@ upload=os.system('screencapture -i '+path+fileName)
 
 
 if(upload==0):
-        adds='cd '+path+' ; git add .'
-        print(adds)
-        add=os.system(adds)
-	print(add)
-        os.system('cd '+path+' ; git commit -m "'+fileName+' add"')
-        os.system('cd '+path+' ; git push origin master')
+        adds=os.system('cd '+path+' ; git add .')
+        commits=os.system('cd '+path+' ; git commit -m "'+fileName+' add"')
+        pushs=os.system('cd '+path+' ; git push origin master')
         str='https://gaoqisen.github.io/GraphBed/'+fileName
-        txt(str)
+        if (adds+commits+pushs != 0):
+		os.system('say "no"')
+	else:
+		txt(str)
