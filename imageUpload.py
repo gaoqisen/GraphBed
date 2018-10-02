@@ -7,7 +7,7 @@ def txt(text):
 	file.close()
 	print('ok')
 	os.system('open github_image_path.txt')
-	
+	os.system('say "ok"')
 
 fileName=time.strftime("%Y%m%d%H%M%S", time.localtime())+'.png'
 print(fileName)
