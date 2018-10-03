@@ -22,7 +22,7 @@ upload=os.system('screencapture -i '+path+fileName)
 if(upload==0):
         adds=os.system('cd '+path+' ; git add .')
         commits=os.system('cd '+path+' ; git commit -m "'+fileName+' add"')
-        pushs=os.system('cd '+path+' ; git push origin master')
+        pushs=os.system('cd '+path+' ; git pull origin master ; git push origin master')
         str='https://gaoqisen.github.io/GraphBed/'+fileName
         if (adds+commits+pushs != 0):
 		os.system('say "no"')
